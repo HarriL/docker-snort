@@ -42,3 +42,33 @@ Start Docker
 Verify Docker installation
 > sudo docker run hello-world
 
+Make docker-snort
+> cd ~/docker-snort
+
+> make
+
+Configure snort (here we conf snort outside the container
+> sudo mkdir /etc/snort /etc/snort/rules /var/log/snort
+
+Create files to catch ping
+> cat /etc/snort/snort.conf
+include /etc/snort/rules/icmp.rules
+
+and
+> cat /etc/snort/rules/icmp.rules
+alert icmp any any -> any any (msg:"ICMP Packet"; sid:477; rev:3;)
+
+## Structure of an alert
+<Rule Actions> <Protocol> <Source IP Address> <Source Port> <Direction Operator> <Destination IP Address> <Destination > (rule options)
+
+## Rule structure and example
+Structure	| Example
+--------- | ---------
+Rule Actions | alert
+Protocol | icmp
+Source IP Address | any
+Source Port | any
+Direction Operator | ->
+Destination IP Address | any
+Destination Port | any
+(rule options) | (msg:”ICMP Packet”; sid:477; rev:3;)
