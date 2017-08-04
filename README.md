@@ -24,3 +24,21 @@ Copy file "id_rsa.pub" to your Git / Settings / SSH and GPG keys and clone from 
 
 > git clone git@github.com:HarriL/docker-snort.git
 
+Install Docker CE (Community Edition): https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-using-the-repository
+
+> sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+> sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+> sudo yum-config-manager --enable docker-ce-test
+
+> sudo yum makecache fast
+
+> sudo yum install docker-ce
+
+Start Docker
+> sudo systemctl start docker
+
+Verify Docker installation
+> sudo docker run hello-world
+
