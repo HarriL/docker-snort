@@ -5,7 +5,7 @@ Forked from: jasonish/docker-snort 2017-08-04
 
 ## Installation: to a fresh Centos7.3 (e.g. testing in a virtual machine)
 
-Create public/private keys for authentication
+Create public/private keys for authentication. See: https://wiki.centos.org/HowTos/Network/SecuringSSH
 > cd ~/.ssh
 
 > ssh-keygen -t rsa
